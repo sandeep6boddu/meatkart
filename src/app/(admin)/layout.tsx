@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { redirect } from "next/navigation";
 import "../globals.css";
-import { LayoutDashboard, Package, ShoppingCart, Users, Settings, FileBarChart, UserSquare2, MapPin } from "lucide-react";
+import { LayoutDashboard, Package, ShoppingCart, Users, Settings, FileBarChart, UserSquare2, MapPin, Globe } from "lucide-react";
 import { Toaster } from "sonner";
 import { LogoutButton } from "@/components/admin/LogoutButton";
 import { CacheClearButton } from "@/components/admin/CacheClearButton";
@@ -106,6 +106,15 @@ export default async function AdminLayout({
             </div>
             <nav className="tw-flex-1 tw-p-4 tw-space-y-1">
               <p className="tw-px-4 tw-text-xs tw-font-bold tw-text-gray-400 tw-uppercase tw-tracking-wider tw-mb-3 tw-mt-2">Menu</p>
+
+              <Link
+                href="/"
+                target="_blank"
+                className="tw-flex tw-items-center tw-space-x-3 tw-px-4 tw-py-3 tw-text-gray-600 hover:tw-bg-red-50 hover:tw-text-primary tw-rounded-lg tw-transition-all tw-group"
+              >
+                <Globe size={20} className="tw-text-gray-400 group-hover:tw-text-primary" />
+                <span className="tw-font-medium">Visit Store</span>
+              </Link>
 
               <Link
                 href="/admin"
