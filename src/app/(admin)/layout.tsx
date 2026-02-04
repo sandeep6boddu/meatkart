@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { redirect } from "next/navigation";
 import "../globals.css";
-import { LayoutDashboard, Package, ShoppingCart, Users, Settings, FileBarChart, UserSquare2, MapPin, Globe } from "lucide-react";
+import { LayoutDashboard, Package, ShoppingCart, Users, Settings, FileBarChart, UserSquare2, MapPin, Globe, Tag } from "lucide-react";
 import { Toaster } from "sonner";
 import { LogoutButton } from "@/components/admin/LogoutButton";
 import { CacheClearButton } from "@/components/admin/CacheClearButton";
@@ -139,6 +139,13 @@ export default async function AdminLayout({
                   >
                     <Package size={20} className="tw-text-gray-400 group-hover:tw-text-primary" />
                     <span className="tw-font-medium">Products</span>
+                  </Link>
+                  <Link
+                    href="/admin/coupons"
+                    className="tw-flex tw-items-center tw-space-x-3 tw-px-4 tw-py-3 tw-text-gray-600 hover:tw-bg-red-50 hover:tw-text-primary tw-rounded-lg tw-transition-all tw-group"
+                  >
+                    <Tag size={20} className="tw-text-gray-400 group-hover:tw-text-primary" />
+                    <span className="tw-font-medium">Coupons</span>
                   </Link>
                   <Link
                     href="/admin/locations"

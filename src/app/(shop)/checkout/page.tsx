@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation'
 import { useState } from 'react'
 import { useCartStore } from '@/store/cart-store'
 import { Loader2 } from 'lucide-react'
+import { CouponInput } from '@/components/cart/CouponInput'
 
 export default function CheckoutPage() {
   const router = useRouter()
@@ -22,6 +23,8 @@ export default function CheckoutPage() {
   })
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [error, setError] = useState('')
+  const [couponCode, setCouponCode] = useState<string | null>(null)
+  const [discountAmount, setDiscountAmount] = useState(0)
 
   const inputStyle = {
     height: '45px',
@@ -85,7 +88,8 @@ export default function CheckoutPage() {
         body: JSON.stringify({
           items,
           totalAmount: getTotal(),
-          customer: formData
+          customer: formData,
+          couponCode
         })
       })
 
@@ -263,18 +267,41 @@ export default function CheckoutPage() {
                   ))}
                 </div>
 
+                <div style={{ marginBottom: '20px' }}>
+                  <CouponInput
+                    cartTotal={getTotal()}
+                    appliedCoupon={couponCode}
+                    onApply={(code, discount) => {
+                      setCouponCode(code)
+                      setDiscountAmount(discount)
+                    }}
+                    onRemove={() => {
+                      setCouponCode(null)
+                      setDiscountAmount(0)
+                    }}
+                  />
+                </div>
+
                 <div style={{ background: '#f9f9f9', padding: '15px' }}>
                   <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '10px' }}>
                     <span style={{ fontFamily: 'noto_sansregular', color: '#666' }}>Subtotal</span>
                     <span style={{ fontFamily: 'noto_sansbold', color: '#333' }}>&#8377; {getTotal()}</span>
                   </div>
+                  
+                  {discountAmount > 0 && (
+                    <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '10px' }}>
+                      <span style={{ fontFamily: 'noto_sansregular', color: '#f25648' }}>Discount ({couponCode})</span>
+                      <span style={{ fontFamily: 'noto_sansbold', color: '#f25648' }}>- &#8377; {discountAmount}</span>
+                    </div>
+                  )}
+
                   <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '15px' }}>
-                    <span style={{ fontFamily: 'noto_sansregular', color: '#666' }}>Delivery Chaarges</span>
+                    <span style={{ fontFamily: 'noto_sansregular', color: '#666' }}>Delivery Charges</span>
                     <span style={{ fontFamily: 'noto_sansbold', color: '#3c763d' }}>FREE</span>
                   </div>
                   <div style={{ display: 'flex', justifyContent: 'space-between', borderTop: '1px solid #eee', paddingTop: '15px' }}>
                     <span style={{ fontFamily: 'noto_sansbold', color: '#333', fontSize: '16px' }}>TOTAL</span>
-                    <span style={{ fontFamily: 'noto_sansbold', color: '#f25648', fontSize: '20px' }}>&#8377; {getTotal()}</span>
+                    <span style={{ fontFamily: 'noto_sansbold', color: '#f25648', fontSize: '20px' }}>&#8377; {getTotal() - discountAmount}</span>
                   </div>
                 </div>
 

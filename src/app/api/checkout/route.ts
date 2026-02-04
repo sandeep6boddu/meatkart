@@ -2,6 +2,7 @@ import { NextResponse } from 'next/server'
 import prisma from '@/lib/prisma'
 import { Decimal } from '@prisma/client/runtime/library'
 import { createClient } from '@/lib/supabase/server'
+import { validateCoupon } from '@/app/actions/coupon'
 
 type CheckoutItem = {
   productId: string
@@ -25,7 +26,11 @@ export async function POST(req: Request) {
     const { data: { user: authUser } } = await supabase.auth.getUser()
 
     const body = await req.json()
-    const { items, customer } = body as { items: CheckoutItem[]; customer: CustomerInfo }
+    const { items, customer, couponCode } = body as { 
+      items: CheckoutItem[]; 
+      customer: CustomerInfo;
+      couponCode?: string;
+    }
 
     // Validate required fields
     if (!items || items.length === 0) {
@@ -142,11 +147,36 @@ export async function POST(req: Request) {
           role: 'customer'
         }
       })
-    } else {
-      // Optional: Update user details if needed?
-      // For now, let's just use the found user.
-      // We might want to ensure the phone number matches if we found by email.
     }
+
+    // --- COUPON VALIDATION ---
+    let discountAmount = new Decimal(0)
+    let appliedCouponId = null
+
+    if (couponCode) {
+      // Validate coupon with the found/created user ID
+      const couponResult = await validateCoupon(couponCode, calculatedTotal.toNumber(), user.id)
+      
+      if (couponResult.valid && couponResult.discount && couponResult.couponId) {
+        discountAmount = new Decimal(couponResult.discount)
+        appliedCouponId = couponResult.couponId
+        
+        // Decrement coupon usage is handled in validation? No, validation only checks.
+        // We need to increment usage count here if the order is successfully placed.
+        // But we should do it transactionally ideally. 
+        // For now, we'll assume it's valid and increment later or just proceed.
+        // Actually, let's update the usage count after order creation.
+      } else {
+        // If coupon is invalid but code was provided, should we fail?
+        // Or just ignore it? The frontend should have validated it.
+        // Let's fail for safety if the client sent an invalid code expecting a discount.
+        return NextResponse.json({
+          error: `Invalid coupon: ${couponResult.message}`
+        }, { status: 400 })
+      }
+    }
+
+    const finalTotal = calculatedTotal.sub(discountAmount)
 
     // Generate order number
     const orderNumber = `ORD-${Date.now()}-${Math.floor(Math.random() * 1000)}`
@@ -156,9 +186,10 @@ export async function POST(req: Request) {
       data: {
         userId: user.id,
         orderNumber,
-        totalAmount: calculatedTotal, // SECURITY: Using server-calculated total
+        totalAmount: finalTotal, // SECURITY: Using server-calculated total with discount
         status: 'pending',
         paymentMethod: 'COD',
+        couponId: appliedCouponId,
         deliveryAddress: {
           street: customer.address,
           city: customer.city,
@@ -172,11 +203,20 @@ export async function POST(req: Request) {
       }
     })
 
+    // Increment coupon usage if applied
+    if (appliedCouponId) {
+      await prisma.coupon.update({
+        where: { id: appliedCouponId },
+        data: { usedCount: { increment: 1 } }
+      })
+    }
+
     return NextResponse.json({
       success: true,
       orderId: order.id,
       orderNumber: order.orderNumber,
-      totalAmount: calculatedTotal.toNumber() // Return the actual calculated amount
+      totalAmount: finalTotal.toNumber(),
+      discountApplied: discountAmount.toNumber()
     })
 
   } catch (error: unknown) {
