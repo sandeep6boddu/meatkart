@@ -140,6 +140,9 @@ model Order {
   orderItems OrderItem[]
   payment    Payment?
   delivery   Delivery?
+  coupon     Coupon?   @relation(fields: [couponId], references: [id])
+  couponId   String?   @map("coupon_id") @db.Uuid
+  discountAmount Decimal @default(0) @map("discount_amount") @db.Decimal(10, 2)
 
   @@index([userId])
   @@index([status])
@@ -338,3 +341,27 @@ model SystemSetting {
   @@map("system_settings")
 }
 
+
+model Coupon {
+  id             String    @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  code           String    @unique @db.VarChar(50)
+  description    String?
+  discountType   String    @map("discount_type") // PERCENTAGE, FIXED
+  discountValue  Decimal   @map("discount_value") @db.Decimal(10, 2)
+  minOrderValue  Decimal?  @map("min_order_value") @db.Decimal(10, 2)
+  maxDiscount    Decimal?  @map("max_discount") @db.Decimal(10, 2)
+  startDate      DateTime  @map("start_date") @db.Timestamptz
+  endDate        DateTime? @map("end_date") @db.Timestamptz
+  usageLimit     Int?      @map("usage_limit") // Total times coupon can be used globally
+  usedCount      Int       @default(0) @map("used_count")
+  perUserLimit   Int?      @map("per_user_limit") // Times a single user can use it
+  isActive       Boolean   @default(true) @map("is_active")
+  createdAt      DateTime  @default(now()) @map("created_at") @db.Timestamptz
+  updatedAt      DateTime  @default(now()) @updatedAt @map("updated_at") @db.Timestamptz
+
+  orders         Order[]
+
+  @@index([code])
+  @@index([isActive])
+  @@map("coupons")
+}
