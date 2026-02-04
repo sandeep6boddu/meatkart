@@ -1,0 +1,36 @@
+/* LEGACY MOBILE APP STYLES - Kept for compatibility */
+/* Most styles moved to mobile-responsive.css */
+
+/* Caret icon for dropdowns */
+.caret {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  margin-left: 4px;
+  vertical-align: middle;
+  border-top: 4px dashed;
+  border-right: 4px solid transparent;
+  border-left: 4px solid transparent;
+}
+
+/* Basic hover effects */
+.mobile-location-dropdown button:hover {
+  background: #f8f8f8;
+  cursor: pointer;
+}
+
+.mobile-nav-item:active {
+  opacity: 0.7;
+}
+
+/* Touch feedback */
+.location-btn:active {
+  background: #e8e8e8;
+}
+
+/* Smooth transitions */
+.mobile-nav-item,
+.mobile-nav-item .icon-wrapper,
+.location-btn {
+  transition: all 0.2s ease;
+}

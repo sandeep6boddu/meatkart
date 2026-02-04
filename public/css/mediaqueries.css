@@ -1,0 +1,426 @@
+@media only screen and (max-width: 991px) {
+    .container {
+        width: 100%;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .top-header .top-header-content {
+        border-right: none;
+        height: auto;
+        margin-bottom: 10px;
+    }
+
+    .top-header .top-header-content p {
+        font-size: 12px;
+    }
+
+    /* Navigation */
+    .second-header {
+        height: auto;
+        padding-bottom: 10px;
+    }
+
+    nav .menu li {
+        padding: 6px 8px 0 8px;
+    }
+
+    nav .menu li a {
+        font-size: 12px;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    /* General Resets */
+    .container {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    /* Top Header Stacking */
+    .top-header {
+        height: auto;
+        padding-bottom: 10px;
+        background-size: cover;
+    }
+
+    #logo {
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    #logo img {
+        max-width: 160px;
+        margin: 0 auto;
+    }
+
+    .top-header-content {
+        text-align: center;
+        border: none;
+        height: auto;
+        display: inline-block;
+        width: 100%;
+        margin-bottom: 5px;
+        padding: 0;
+    }
+
+    .pull-left, .pull-right {
+        float: none !important;
+        display: inline-block;
+    }
+
+    /* Location Dropdown */
+    .top-header .top-header-content .dropdown .drop-down-button {
+        min-width: auto;
+        width: 100%;
+        margin: 0;
+    }
+    
+    .top-header .top-header-content .click {
+        margin-left: 10px;
+    }
+
+    .top-header .top-header-content .locations {
+        left: 0;
+        min-width: 100%;
+        position: relative;
+        top: 0;
+    }
+
+    /* Navigation Menu */
+    .second-header {
+        height: auto;
+        background-size: cover;
+        padding: 10px 0;
+    }
+
+    .home-icon {
+        display: none;
+    }
+
+    nav .menu {
+        padding: 0;
+        margin: 0;
+        text-align: center;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    nav .menu li {
+        float: none;
+        display: inline-block;
+        border: none;
+        margin: 2px;
+        padding: 5px 8px;
+        background: rgba(255,255,255,0.7);
+        border-radius: 4px;
+        flex-grow: 1;
+    }
+    
+    nav .menu li a {
+        float: none;
+        font-size: 11px;
+    }
+
+    /* Search & Cart */
+    .search {
+        height: auto;
+        padding: 10px 0;
+        background: transparent;
+        margin-top: 10px;
+    }
+
+    .search-bar {
+        margin: 0;
+        width: 100%;
+    }
+
+    .input-group.search-bar {
+        display: flex;
+        width: 100%;
+    }
+
+    .search-bar-control {
+        width: 100% !important;
+        border-radius: 4px 0 0 4px;
+    }
+
+    .search-bar .input-group-btn .btn {
+        border-radius: 0 4px 4px 0;
+    }
+
+    .shopping {
+        text-align: center;
+        margin-top: 15px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .shopping a {
+        display: flex;
+        align-items: center;
+        background: #fff;
+        padding: 8px 15px;
+        border-radius: 20px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        width: auto;
+    }
+    
+    .shopping a img {
+        margin: 0 10px 0 0;
+    }
+
+    /* Category Images on Home */
+    .category-images {
+        margin-bottom: 20px;
+        text-align: center;
+        position: relative;
+        min-height: 200px;
+        background: #f9f9f9;
+        border-radius: 8px;
+        padding: 10px;
+    }
+    
+    .category-images img {
+        max-height: 120px;
+        width: auto;
+        margin: 0 auto;
+        display: block;
+    }
+    
+    .category-images a.links, 
+    .category-images a.links-chic, 
+    .category-images a.links-sea {
+        position: relative;
+        left: auto;
+        top: auto;
+        display: block;
+        margin: 10px auto 0;
+        width: 90%;
+        padding: 8px 0;
+        text-align: center;
+        font-size: 14px;
+    }
+
+    .category-images h3 {
+        position: relative;
+        left: auto;
+        top: auto;
+        text-align: center;
+        margin: 10px 0;
+        font-size: 20px;
+    }
+    
+    .category-images h3 span {
+        position: relative;
+        left: auto;
+        top: auto;
+        display: inline;
+        font-size: 20px;
+        margin-left: 5px;
+    }
+
+    /* Video & Promos */
+    .category-images-video iframe {
+        width: 100%;
+        height: 200px;
+    }
+    
+    .category-images-pro img {
+        width: 100%;
+    }
+
+    /* Offers Section */
+    .first-order, .frozen-food {
+        margin-top: 15px;
+        margin-bottom: 15px;
+        padding: 15px 0;
+    }
+    
+    .offer h2 {
+        float: none;
+        font-size: 28px;
+        text-align: center;
+    }
+    
+    .offer h2 span {
+        float: none;
+        font-size: 24px;
+        display: block;
+    }
+    
+    .offer {
+        border-right: none;
+        border-bottom: 1px solid #f4f2e9;
+        padding-bottom: 10px;
+        margin-bottom: 10px;
+    }
+    
+    .purchase-order {
+        text-align: center;
+    }
+    
+    .purchase-order img {
+        position: relative;
+        left: auto;
+        top: auto;
+        display: block;
+        margin: 10px auto;
+    }
+    
+    .frozen-offer h2 {
+        font-size: 24px;
+        text-align: center;
+    }
+    
+    .frozen-offer span {
+        font-size: 16px;
+    }
+    
+    .frozen-offer img {
+        position: relative;
+        left: auto;
+        top: auto;
+        float: none;
+        display: block;
+        margin: 10px auto;
+        max-width: 100%;
+    }
+    
+    .shop-link {
+        margin: 20px 0;
+        text-align: center;
+    }
+
+    /* Best Sellers Grid */
+    .items {
+        margin-top: 20px;
+        padding: 0 5px;
+    }
+    
+    .sellars-items {
+        min-height: auto;
+        padding-bottom: 20px;
+        border: 1px solid #eee;
+        margin-bottom: 15px;
+    }
+    
+    /* Strip Reset */
+    .strip {
+        width: 100%;
+        margin-left: 0;
+        background-size: cover;
+    }
+
+    /* Product Page */
+    .mutton-content .col-md-5, 
+    .mutton-content .col-md-4, 
+    .mutton-content .col-md-2, 
+    .mutton-content .col-md-7 {
+        width: 100%;
+        padding: 0 15px;
+    }
+
+    .mutton-img img {
+        width: 100%;
+        height: auto;
+    }
+    
+    .shipping-img img {
+        margin: 10px 0;
+        position: static;
+    }
+    
+    .check-availability form {
+        float: none !important;
+        width: 100%;
+    }
+    
+    .check-availability .form-group {
+        display: block;
+        margin-bottom: 10px;
+    }
+    
+    .check-availability input {
+        width: 100% !important;
+    }
+    
+    .check-button {
+        float: none !important;
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .details h2 {
+        margin-top: 20px;
+    }
+
+    .share {
+        margin: 20px 0;
+        background: transparent;
+        text-align: center;
+    }
+
+    .share-images {
+        display: inline-block;
+        width: 45%;
+        border: none;
+        vertical-align: top;
+    }
+
+    /* Footer */
+    .certificate, .transport {
+        width: 100%;
+        height: auto;
+        padding-bottom: 20px;
+    }
+
+    .certificate ul, .transport ul {
+        margin-left: 0;
+        padding: 0 15px;
+    }
+    
+    .certificate ul li, .transport ul li {
+        font-size: 14px;
+        line-height: 40px;
+    }
+
+    .certificate img, .transport img {
+        float: none;
+        display: block;
+        margin: 20px auto;
+    }
+    
+    .footer-bottom .paypal p {
+        text-align: center;
+        margin: 10px 0;
+    }
+    
+    .paypal-img {
+        margin: 10px auto;
+        display: block;
+    }
+    
+    .footer-links, .footer-links-nav {
+        margin: 15px 0;
+        text-align: center;
+        padding: 0;
+    }
+    
+    .footer-links li, .footer-links-nav li {
+        display: inline-block;
+        float: none;
+        margin: 5px;
+    }
+    
+    .message {
+        margin: 0 0 10px 0;
+        text-align: center;
+    }
+    
+    .subscribe .news-letter {
+        text-align: center;
+    }
+}

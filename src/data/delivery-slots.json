@@ -1,0 +1,18 @@
+[
+    {
+        "id": "slot1",
+        "label": "09:00 AM - 11:00 AM"
+    },
+    {
+        "id": "slot2",
+        "label": "11:00 AM - 01:00 PM"
+    },
+    {
+        "id": "slot3",
+        "label": "01:00 PM - 03:00 PM"
+    },
+    {
+        "id": "slot4",
+        "label": "03:00 PM - 06:00 PM"
+    }
+]

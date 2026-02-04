@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+	<title>Shoping Cart</title>
+	<!-- Bootstrap -->
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 9]>
+	<script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+	<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+	<![endif]-->
+</head>
+<body>
+	<div class="page">
+		<!-- header starts -->
+		<header>
+			<div class="top-header">
+				<div class="container">
+					<div id="logo">
+						<div class="col-md-4 col-xs-12 col-sm-12">
+							<a href="index.html"><img src="images/logo.png" alt="logo"></a>
+						</div>
+					</div>
+					<div class="col-md-8 col-xs-12 col-sm-12 no-gutter">
+						<div class="col-md-4  no-gutter top-header-content">
+							<div class="col-md-12  no-gutter">
+								<p class="pull-left">Location:</p>
+								<div class="dropdown drop-down-content ">
+									<button class="btn btn-default dropdown-toggle drop-down-button" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+									Location
+									<span class="caret click"></span>
+									</button>
+									<ul class="dropdown-menu locations" aria-labelledby="dropdownMenu1">
+										<li><a href="#">Hyderabad</a></li>
+										<li><a href="#">Ranigung</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-4 no-gutter top-header-content text-center phone">
+							<p>Order by Phone: 040 64629595</p>
+						</div>
+						<div class="col-md-2 no-gutter top-header-content text-center platter">
+							<p><a href="">My Platter</a></p>
+						</div>
+						<div class="col-md-1 no-gutter top-header-content text-center sign-up ">
+							<a href="">sign-up</a>
+						</div>
+						<div class="col-md-1 no-gutter top-header-content text-center sign-up login">
+							<li class="list-hover">
+								<a href="">Login</a>
+								<span class="glyphicon glyphicon-arrow-up" aria-hidden="true"></span>
+								<div class="hover-content">
+									<a href="https://www.facebook.com/" class="login-facebook"><img src="images/facebook.png"></a>
+									<a href="" class="login-gplus"><img src="images/gplus.png"></a>
+									<a href="" class="login-twitter"><img src="images/twitter.png"></a>
+								</div>
+							</li>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="second-header">
+				<div class="container">
+					<div class="col-md-6 col-sm-12 col-xs-12">
+						<div class="home-icon">
+						</div>
+						<nav>
+							<ul class="menu">
+								<li><a href="mutton-list.html">Mutton</a></li>
+								<li><a href="#">chicken</a></li>
+								<li><a href="#">sea food</a></li>
+								<li><a href="#">pre-spiced</a></li>
+								<li><a href="#"><span>offers zone</span></a></li>
+							</ul>
+						</nav>
+					</div>
+					<div class="col-md-6 col-sm-12 col-xs-12 search">
+						<div class=" col-md-8 no-gutter">
+							<div class="input-group search-bar">
+								<a href=""><img src="images/search-icon.png" alt="search-img" class=" search-img"></a>
+								<input type="text" class="form-control search-bar-control" placeholder=" Search by keyword">
+								<span class="input-group-btn">	
+									<button class="btn btn-default" type="button">search</button>
+								</span>
+							</div>
+						</div>
+						<div class="shopping">
+							<a href="shopping-cart.html"><img src="images/shopping.png" alt="icon " class="pull-left">shopping bag<span class="pull-left">(6 items)</span></a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
+		<div class="breadcrumps-bg">
+			<div class="container">
+				<ol class="breadcrumb">
+					<li><a href="index.html">Home</a></li>
+					<li class="active">Cart</li>
+				</ol>
+			</div>
+		</div>
+		<section class="mutton-section ">
+			<div class="container">
+				<div class="col-md-3 mutton-list no-gutter">
+					<p>SHOPING CART</p>
+				</div>
+				<div class="col-md-8 no-gutter strip">
+				</div>
+			</div>
+			<div class="container">
+				<div class="col-md-12 mutton-content">
+					<div class=" mutton-curry-cut halal-cut col-md-12">
+						<ul class="mutton-list">
+							<li ><a href=""><img src="images/mutton.png" alt="image"></a></li>
+							<li class="details"><h2>Mutton Curry Pieces Halal Cut</h2></li>
+							<li class="halal-drop-down"><div class="dropdown mutton-curry-content-drop-down">
+								<button id="dLabel" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								500grms
+								<span class="caret"></span>
+								</button>
+								<ul class="dropdown-menu" aria-labelledby="dLabel">
+									<li><a href="#">500grms</a></li>
+									<li><a href="#">200grms</a></li>
+								</ul>
+							</div></li>
+							<li ><div class=" mutton-curry-content halal-cut">
+								<a href=""><img src="images/minus.png" alt="minus"></a>
+								<input type="email" class="form-control form-control-width form-line"  placeholder="2">
+								<a href=""><img src="images/plus.png" alt="plus"></a>
+							</div></li>
+							<li class=" mutton-curry-content halal-cut"><em> &#8377; 380</em></li>
+							<li class=" mutton-curry-content halal-cut"><em> &#8377; 760</em></li>
+							<li><img src="images/delete-img.png" alt="delete-img"></li>
+						</ul>
+					</div>
+					<div class=" mutton-curry-cut halal-cut col-md-12">
+						<ul class="mutton-list">
+							<li ><a href=""><img src="images/chicken-or.png" alt="image"></a></li>
+							<li class="details"><h2>Chicken Drumsticks Halal Cut </h2></li>
+							<li class="halal-drop-down"><div class="dropdown mutton-curry-content-drop-down">
+								<button id="dLabel" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								450grms
+								<span class="caret"></span>
+								</button>
+								<ul class="dropdown-menu" aria-labelledby="dLabel">
+									<li><a href="#">500grms</a></li>
+									<li><a href="#">200grms</a></li>
+								</ul>
+							</div></li>
+							<li ><div class=" mutton-curry-content halal-cut">
+								<a href=""><img src="images/minus.png" alt="minus"></a>
+								<input type="email" class="form-control form-control-width form-line"  placeholder="1">
+								<a href=""><img src="images/plus.png" alt="plus"></a>
+							</div></li>
+							<li class=" mutton-curry-content halal-cut"><em> &#8377; 380</em></li>
+							<li class=" mutton-curry-content halal-cut"><em> &#8377; 760</em></li>
+							<li><img src="images/delete-img.png" alt="delete-img"></li>
+						</ul>
+					</div>
+					<div class=" mutton-curry-cut halal-cut col-md-12">
+						<ul class="mutton-list">
+							<li ><a href=""><img src="images/halal.png" alt="image"></a></li>
+							<li class="details halal-cut"><h2>Mutton Mince Halal Cut </h2></li>
+							<li class="halal-drop-down"><div class="dropdown mutton-curry-content-drop-down">
+								<button id="dLabel" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								250grms
+								<span class="caret"></span>
+								</button>
+								<ul class="dropdown-menu" aria-labelledby="dLabel">
+									<li><a href="#">500grms</a></li>
+									<li><a href="#">200grms</a></li>
+								</ul>
+							</div></li>
+							<li ><div class=" mutton-curry-content halal-cut">
+								<a href=""><img src="images/minus.png" alt="minus"></a>
+								<input type="email" class="form-control form-control-width form-line"  placeholder="3">
+								<a href=""><img src="images/plus.png" alt="plus"></a>
+							</div></li>
+							<li class=" mutton-curry-content halal-cut"><em> &#8377; 380</em></li>
+							<li class=" mutton-curry-content halal-cut"><em> &#8377; 760</em></li>
+							<li><img src="images/delete-img.png" alt="delete-img"></li>
+						</ul>
+					</div>
+				</div>
+				<div class="container">
+					<div class="certificate-shipping border-top">
+						<div class="col-md-6 certificate-content ">
+							<div class="certificate">
+								<img src="images/guarentee.png" alt="image">
+								<ul>
+									<li><span></span> Hand-cut & Trimmed</li>
+									<li><span></span> Products are Tested for Purity</li>
+									<li><span></span> 100% Guaranteed Fresh</li>
+								</ul>
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="transport">
+								<img src="images/transport.png" alt="image">
+								<ul>
+									<li><span></span> Free Shipping on orders above `400</li>
+									<li><span></span> Choose Your Own Delivery Time</li>
+									<li><span></span> Cash on Delivery Available</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- footer starts -->
+			<footer>
+				<div class="subscribe">
+					<div class="container">
+						<div class="news-letter col-md-6 col-xs-12 col-sm-12 no-gutter">
+							<div class="col-md-1 no-gutter pull-left message">
+								<img src="images/message.png" alt="message" class="pull-left">
+							</div>
+							<div class="col-md-9 no-gutter " >
+								<h3>Subscribe To Our Newsletter</h3>
+								<p>Receive latest news on Offers, Discounts, New Products & much more...</p>
+							</div>
+							<div class="col-md-1 no-gutter message-right-img pull-right">
+								<img src="images/mail-img.png" alt="mail-img" >
+							</div>
+						</div>
+						<div class="mail col-md-6 col-xs-12 col-sm-12">
+							<form>
+								<div class="form-group col-md-10 form-detailes">
+									<input type="email" class="form-control form-detailes" id="exampleInputEmail1" placeholder="Enter Your Email Address">
+								</div>
+							</form>
+							<div class="col-md-2">
+								<button type="button" class="btn btn-default submit-mail">Submit</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- footer ends
+				<!-- footer bottom starts -->
+				<div class="footer-bottom">
+					<div class="container">
+						<div class="paypal col-md-3 no-gutter">
+							<p class="col-md-2">Welcome:</p>
+							<a href=""><img src="images/paypal.png" alt="paypal" class="paypal-img"></a>
+							<img src="images/footer-rb.png" class="pull-right " >
+						</div>
+						<div class="col-md-3 no-gutter ">
+							<ul class="nav navbar-nav footer-links text-center col-md-11">
+								<li><a href="#"><img src="images/facebook.png" alt="facebook"></a></li>
+								<li><a href="#"><img src="images/linkedin.png" alt="facebook"></a></li>
+								<li><a href="#"><img src="images/twitter.png" alt="facebook"></a></li>
+								<li><a href="#"><img src="images/gplus.png" alt="facebook"></a></li>
+							</ul>
+							<img src="images/footer-rb.png" >
+						</div>
+						<div class="col-md-6 no-gutter">
+							<ul class="nav navbar-nav footer-links-nav text-center col-md-11">
+								<li><a href="#">About Us</a></li>
+								<li><a href="#">Customer Support</a></li>
+								<li><a href="#">Return Policy</a></li>
+								<li><a href="#">Privacy Policy  </a></li>
+								<li><a href="#">Disclaimer</a></li>
+							</ul>
+							<p class="pull-right copyright">Copyrights © 2018 MeatKart. All Rights Reserved.</p>
+						</div>
+					</div>
+				</div>
+			</footer>
+		</div>
+		<!-- footer bottoms ends
+		<!-- jQuery (necessary for Bootstrap's JavaScript plugins)
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+		<!-- Include all compiled plugins (below), or include individual files as needed -->
+		<script src="js/bootstrap.min.js"></script>
+	</body>
+</html>
