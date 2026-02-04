@@ -1,4 +1,4 @@
-# Meatkart - E-commerce Platform
+# Meatkart - E-commerce Platform test
 
 A full-featured e-commerce platform for meat and grocery products built with Next.js 15, Prisma, and Supabase.
 
