@@ -53,7 +53,7 @@ export default async function InvoicePage({ params }: InvoicePageProps) {
         <div className="tw-flex tw-justify-between tw-items-start tw-mb-8 tw-border-b tw-pb-8">
           <div>
             <h1 className="tw-text-3xl tw-font-bold tw-text-primary tw-mb-2">Meatkart</h1>
-            <p className="tw-text-sm tw-text-gray-500">Order by Phone: 040 66669595</p>
+            <p className="tw-text-sm tw-text-gray-500">Order by Phone: +91 96666 69595</p>
           </div>
           <div className="tw-text-right">
             <h2 className="tw-text-xl tw-font-semibold tw-mb-1">INVOICE</h2>

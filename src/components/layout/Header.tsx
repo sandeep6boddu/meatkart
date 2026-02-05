@@ -108,7 +108,7 @@ export function Header() {
               </div>
             </div>
             <div className="col-md-4 no-gutter top-header-content text-center phone">
-              <p>Order by Phone: 040 66669595</p>
+              <p>Order by Phone: +91 96666 69595</p>
             </div>
             <div className="col-md-2 no-gutter top-header-content text-center platter">
               <p><Link href="/platter">My Platter</Link></p>
